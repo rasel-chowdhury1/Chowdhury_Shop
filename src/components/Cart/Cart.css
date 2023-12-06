@@ -4,6 +4,18 @@
     position: sticky;
     top: 0;
 }
+.cart h4{
+    font-weight: bold;
+}
 .cart p{
     font-size: 17px;
+}
+
+.btn-clear-cart{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 17px;
+    background-color: #FF3030;
 }

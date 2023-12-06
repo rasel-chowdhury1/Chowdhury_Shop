@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Orders.css';
 import Cart from '../Cart/Cart';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, Link } from 'react-router-dom';
 import OrderItem from '../OrderItem/OrderItem';
 import { removeFromDb } from '../../utilities/fakedb';
 
@@ -15,9 +15,15 @@ const Orders = () => {
         removeFromDb(id)
     }
 
+    const handleClearCart = () =>{
+        console.log('clicked clear button')
+        setCart([])
+        deleteShoppingCart()
+    }
+
     return (
         <div className='shop-container'>
-            <div className=''>
+            <div className='order-list'>
                <h3>This is order page {cart.length}</h3>
                <div className='orders'>
                 {
@@ -30,7 +36,15 @@ const Orders = () => {
                </div>
             </div>
             <div className="cart-container">
-                 <Cart key={cart.id} cart={cart} ></Cart>
+                 <Cart 
+                 key={cart.id} 
+                 cart={cart}
+                 handleClearCart={handleClearCart}
+                 >
+                    <Link className='proceed-link' to='/checkout'>
+                        <button className='btn-proceed'>Proceed Checkout</button>
+                    </Link>
+                 </Cart>
             </div>
             
         </div>

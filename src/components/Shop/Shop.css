@@ -9,3 +9,18 @@
     gap: 45px;
     margin: 50px;
 }
+
+.proceed-link{
+    text-decoration: none;
+}
+
+.btn-proceed{
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 17px;
+    background-color: orange;
+    margin-top: 10px;
+}
