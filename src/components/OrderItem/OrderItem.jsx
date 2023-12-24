@@ -5,7 +5,7 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 const OrderItem = (props) => {
     console.log(props)
-    const {id,img,name,price,quantity} = props.product;
+    const {_id,img,name,price,quantity} = props.product;
     const {handleDeleteToCart} = props
     return (
         <div className='orderItem'>
@@ -15,7 +15,7 @@ const OrderItem = (props) => {
                 <p>Price: <span className='orange-text'>${price}</span></p>
                 <p>Quantity: <span className='orange-text'>{quantity}</span></p>
             </div>
-            <button onClick={()=>handleDeleteToCart(id)} className='del-button'>
+            <button onClick={()=>handleDeleteToCart(_id)} className='del-button'>
                 <FontAwesomeIcon className='del-icon' icon={faTrashAlt} />
             </button>
             
